@@ -45,3 +45,8 @@ FOUNDATION_EXPORT const unsigned char TrezorCryptoVersionString[];
 #include "segwit_addr.h"
 #include "sha2.h"
 #include "sha3.h"
+
+#include "poly1305-donna-32.h"
+#include "groestl_internal.h"
+#include "ecrypt-portable.h"
+#include "ecrypt-machine.h"
