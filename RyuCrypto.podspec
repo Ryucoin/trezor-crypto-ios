@@ -1,15 +1,14 @@
 Pod::Spec.new do |s|
-  s.name             = 'TrezorCrypto'
-  s.version          = '0.0.9'
+  s.name             = 'RyuCrypto'
+  s.version          = '0.0.1'
   s.summary          = 'Heavily optimized cryptography algorithms for iOS.'
 
-  s.homepage         = 'https://github.com/TrustWallet/trezor-crypto-ios'
+  s.homepage         = 'https://github.com/Ryucoin/trezor-crypto-ios'
   s.license          = { type: 'MIT', file: 'trezor-crypto/LICENSE' }
-  s.authors          = { 'Alejandro Isaza' => 'al@isaza.ca' }
-  s.source           = { git: 'https://github.com/TrustWallet/trezor-crypto-ios.git', tag: s.version, submodules: true }
+  s.authors          = { 'Wyatt Mufson' => 'wyatt@ryucoin.com' }
+  s.source           = { git: 'https://github.com/Ryucoin/trezor-crypto-ios.git', tag: s.version, submodules: true }
 
-  s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.10'
+  s.ios.deployment_target = '12.0'
 
   s.prepare_command = <<-CMD
     git submodule update --init
@@ -17,7 +16,7 @@ Pod::Spec.new do |s|
     sed -i '' -e 's:ed25519-donna/::g' ./**/*.h
     sed -i '' -e 's:USE_ETHEREUM 0:USE_ETHEREUM 1:g' trezor-crypto/options.h
   CMD
-  s.module_map = 'TrezorCrypto.modulemap'
+  s.module_map = 'RyuCrypto.modulemap'
   search_paths = [
     '"${PODS_ROOT}/trezor-crypto"',
     '"${PODS_ROOT}/trezor-crypto/aes"',
@@ -31,7 +30,7 @@ Pod::Spec.new do |s|
   }
 
   s.source_files =
-    'TrezorCrypto.h',
+    'RyuCrypto.h',
     'util/SecRandom.m',
     'trezor-crypto/*.{c,h}',
     'trezor-crypto/aes/*.{c,h}',

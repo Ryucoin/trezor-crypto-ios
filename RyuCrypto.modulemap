@@ -1,0 +1,6 @@
+framework module RyuCrypto {
+  umbrella header "RyuCrypto.h"
+
+  export *
+  module * { export * }
+}
